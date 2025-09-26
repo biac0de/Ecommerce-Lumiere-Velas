@@ -1,0 +1,36 @@
+@startuml
+class Produto {
+  - id: number
+  - nome: string
+  - preco: number
+  - estoque: number
+  + baixarEstoque(qtd)
+  + reporEstoque(qtd)
+  + toJSON()
+}
+class ItemCarrinho {
+  - produto: Produto
+  - quantidade: number
+  + calcularSubtotal()
+  + toJSON()
+}
+class Carrinho {
+  - itens: ItemCarrinho[]
+  + adicionarProduto(produto, qtd)
+  + removerProdutoPorNome(nome)
+  + calcularTotal()
+  + toJSON()
+}
+class Cliente {
+  - id: number
+  - nome: string
+  - email: string
+  - historico: Carrinho[]
+  + finalizarCompra(carrinho)
+  + toJSON()
+}
+
+Produto "1" <-- "1..*" ItemCarrinho
+Carrinho "1" *-- "0..*" ItemCarrinho
+Cliente "1" o-- "0..*" Carrinho
+@enduml
