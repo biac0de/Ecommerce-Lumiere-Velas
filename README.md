@@ -42,7 +42,7 @@ O projeto foi modelado a partir do seguinte diagrama UML:
 
 1. Clone o repositório:
  
-   git clone https://github.com/SEU-USUARIO/Ecommerce-Lumiere-Velas.git
+   git clone https://github.com/biac0de/Ecommerce-Lumiere-Velas.git
    cd Ecommerce-Lumiere-Velas
 
 2. Instale as dependências:
